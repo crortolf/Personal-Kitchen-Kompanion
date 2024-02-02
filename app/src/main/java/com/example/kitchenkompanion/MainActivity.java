@@ -32,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
                         Intent data = result.getData();
                         int cu = data.getExtras().getInt("currentUser", -1);
                         Log.i("myInfo", "CU: " + cu);
+                        /*
                         if (cu > -1) {
                             for (Button b : userButtons) Log.i("myInfo", b.getText().toString());
                             if (userButtons[cu] != currentUser) userButtons[cu].performClick();
                         } else if (currentUser != null) currentUser.performClick();
+                        */
                         newPage(data.getExtras().getInt("nextPage"));
                     }
                 }
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         scale = getResources().getDisplayMetrics().density;
         MainActivity myContext = this;
 
-        users = new String[]{"Chris", "Andrew", "Ethan", "Jason", "Katy", "Joel", "Brian"};
+        users = new String[]{"Chris", "Katy", "Kennan", "Bryan", "Alex"};
 
         LinearLayout ll = findViewById(R.id.userLayout);
 
