@@ -1,16 +1,13 @@
 <resources>
     <string name="app_name">Kitchen Kompanion</string>
     <string name="add_a_new_shopping_list_item">Add a new shopping list item</string>
-    <string-array name="user_name_list">
-        <item>Andrew</item>
-        <item>Ethan</item>
-        <item>Chris</item>
-        <item>Jason</item>
-    </string-array>
     <string name="title_activity_frame">FrameActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pantry_title">Pantry Overview</string>
+    <string name="home_title">Kitchen Kompanion II</string>
+    <string name="invalid_item">Failed to retrieve grocery item</string>
+    <string name="invalid_date">XX/XX/XX</string>
+    <string name="invalid_amount">Unknown amount</string>
 </resources>

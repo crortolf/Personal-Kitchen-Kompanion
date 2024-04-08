@@ -8,10 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,10 +40,10 @@ public class ShoppingList extends AppCompatActivity {
         shoppingListAdapter = new ShoppingListAdapter(this);
         shoppingListRecyclerView.setAdapter(shoppingListAdapter);
 
-        shoppingList.add(new GroceryItem("Milk", "Cartons", 0.5f));
-        shoppingList.add(new GroceryItem("Apples", "Apples", 4));
-        shoppingList.add(new GroceryItem("Flour", "lbs", 3.5f));
-        shoppingList.add(new GroceryItem("Ramen", "Cups", 16));
+        //shoppingList.add(new GroceryItem("Milk", "Cartons", 0.5f));
+        //shoppingList.add(new GroceryItem("Apples", "Apples", 4));
+        //shoppingList.add(new GroceryItem("Flour", "lbs", 3.5f));
+        //shoppingList.add(new GroceryItem("Ramen", "Cups", 16));
 
         shoppingListAdapter.setGroceryItem(shoppingList);
 
@@ -60,7 +58,7 @@ public class ShoppingList extends AppCompatActivity {
             }
         });
 
-        Button kitchen = findViewById(R.id.kitchenOverview);
+        Button kitchen = findViewById(R.id.pantryButton);
         Button main = findViewById(R.id.homeButton);
         Button recipe = findViewById(R.id.recipesButton);
 
@@ -128,7 +126,7 @@ public class ShoppingList extends AppCompatActivity {
             public void onClick(View view) {
                 // save button
                 String item = newItemPopup.getText().toString();
-                shoppingList.add(new GroceryItem(item, quantityName.getText().toString(), 1f));
+                //shoppingList.add(new GroceryItem(item, quantityName.getText().toString(), 1f));
                 shoppingListAdapter.setGroceryItem(shoppingList);
                 Toast.makeText(getApplicationContext(), "Added " + item, Toast.LENGTH_LONG).show();
                 dialog.dismiss();

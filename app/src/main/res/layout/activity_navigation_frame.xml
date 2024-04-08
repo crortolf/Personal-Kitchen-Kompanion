@@ -8,6 +8,15 @@
     tools:context=".NavigationFrame">
 
     <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -28,10 +37,12 @@
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/brown"
                 android:fontFamily="@font/helvetica"
                 android:gravity="bottom|center"
                 android:text="Home"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textSize="11sp" />
 
             <Button
                 android:id="@+id/shoppingButton"
@@ -47,7 +58,7 @@
                 android:textSize="11sp" />
 
             <Button
-                android:id="@+id/kitchenOverview"
+                android:id="@+id/pantryButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"
@@ -100,7 +111,7 @@
                 app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />
 
             <ImageView
-                android:id="@+id/overviewIcon"
+                android:id="@+id/pantryIcon"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
@@ -118,16 +129,5 @@
         </LinearLayout>
 
     </FrameLayout>
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView5"
-        android:name="com.example.kitchenkompanion.HomePage"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_home_page" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

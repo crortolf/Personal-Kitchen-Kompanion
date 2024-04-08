@@ -74,7 +74,7 @@ public class RecipeList  extends AppCompatActivity {
 
         addButton.setOnClickListener(addBtnClick);
 
-        Button kitchen = findViewById(R.id.kitchenOverview);
+        Button kitchen = findViewById(R.id.pantryButton);
         Button main = findViewById(R.id.homeButton);
         Button shopping = findViewById(R.id.shoppingButton);
 

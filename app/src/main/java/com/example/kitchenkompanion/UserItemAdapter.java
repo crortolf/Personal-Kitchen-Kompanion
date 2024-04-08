@@ -32,7 +32,7 @@ public class UserItemAdapter extends ArrayAdapter<GroceryItem> {
 
         Typeface mt = ResourcesCompat.getFont(mContext, R.font.helvetica);
 
-        GroceryItem item = new GroceryItem(name, units, amount, minimumAmount);
+        //GroceryItem item = new GroceryItem(name, units, amount, minimumAmount);
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 

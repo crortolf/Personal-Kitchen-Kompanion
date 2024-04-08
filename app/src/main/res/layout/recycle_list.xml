@@ -77,7 +77,7 @@
                 android:textSize="11sp" />
 
             <Button
-                android:id="@+id/kitchenOverview"
+                android:id="@+id/pantryButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="6dp"
@@ -129,7 +129,7 @@
                 app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />
 
             <ImageView
-                android:id="@+id/overviewIcon"
+                android:id="@+id/pantryIcon"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"

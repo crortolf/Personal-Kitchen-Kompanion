@@ -1,23 +1,17 @@
 package com.example.kitchenkompanion;
 
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -46,17 +40,17 @@ public class UserItemList extends AppCompatActivity implements AdapterView.OnIte
         listView = findViewById(R.id.listview);
         items = new ArrayList<GroceryItem>();
 
-        items.add(new GroceryItem("Milk", "Cartons", 0.5f));
-        items.add(new GroceryItem("Apples", "Apples", 4));
-        items.add(new GroceryItem("Flour", "lbs", 3.5f));
-        items.add(new GroceryItem("Ramen", "Cups", 16));
+        //items.add(new GroceryItem("Milk", "Cartons", 0.5f));
+        //items.add(new GroceryItem("Apples", "Apples", 4));
+        //items.add(new GroceryItem("Flour", "lbs", 3.5f));
+        //items.add(new GroceryItem("Ramen", "Cups", 16));
 
 
         UserItemAdapter adapter = new UserItemAdapter(getApplicationContext(), R.layout.adapter_view_user_items, items);
         listView.setAdapter(adapter);
 
         Button recipe = findViewById(R.id.recipesButton);
-        Button kitchen = findViewById(R.id.kitchenOverview);
+        Button kitchen = findViewById(R.id.pantryButton);
         Button shopping = findViewById(R.id.shoppingButton);
         Button main = findViewById(R.id.homeButton);
 
