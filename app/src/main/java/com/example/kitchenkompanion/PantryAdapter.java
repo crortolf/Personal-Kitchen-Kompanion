@@ -24,6 +24,8 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryItem> {
         LayoutInflater inflater = LayoutInflater.from(context);
         View list = inflater.inflate(R.layout.pantry_item_view, parent, false);
 
+        //TODO: create swipe to delete function with recycler items
+
         PantryItem viewHolder = new PantryItem(list);
         return viewHolder;
     }

@@ -26,32 +26,15 @@ public class UserViewModel extends ViewModel {
         return true;
     }
 
-    public boolean addTestUser(String name) {
-        if (users.containsKey(name)) return false;
-        User temp = new User(name);
-        temp.inv.add(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
-        temp.inv.add(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
-        temp.inv.add(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
-        temp.inv.add(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
-        temp.inv.add(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
-        temp.inv.add(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
-        temp.inv.add(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
-        temp.inv.add(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
-        temp.inv.add(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
-        temp.inv.add(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
-        temp.inv.add(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
-        temp.inv.add(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
-        temp.inv.add(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
-        temp.inv.add(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
-        temp.inv.add(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
-        temp.inv.add(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
-        users.put(name, temp);
-        return true;
+    public void addGrocery(GroceryItem item) {
+        currentUser.inv.add(item);
     }
 
     public User getUser() {
         return currentUser;
     }
+
+    public String getUsername() { return currentUser.name; }
 
     public HashSet<GroceryItem> pantry() {
         return currentUser.inv;

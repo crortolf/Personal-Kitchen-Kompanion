@@ -28,7 +28,8 @@
             android:exported="true" />
         <activity
             android:name=".NavigationFrame"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

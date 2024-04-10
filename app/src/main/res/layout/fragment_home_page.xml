@@ -33,7 +33,7 @@
         android:text="Add Groceries"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/adjustButton2"
+        app:layout_constraintEnd_toStartOf="@+id/addTest"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -53,13 +53,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/adjustButton2"
+        android:id="@+id/addTest"
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#997017"
         android:fontFamily="@font/helvetica_neue"
-        android:text="Adjust Groceries"
+        android:text="Add Test Groceries"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -22,18 +22,15 @@ import java.util.Set;
 //TODO: Remove add/adjust grocery buttons, replace with notifications container
 public class HomePage extends Fragment {
 
-    Button selected = null;
     UserViewModel userVM;
+
+    Button selected;
     public HomePage() {
         // Required empty public constructor
     }
 
     public static HomePage newInstance() {
         HomePage fragment = new HomePage();
-        //Bundle args = new Bundle();
-        //args.putString(ARG_PARAM1, param1);
-        //args.putString(ARG_PARAM2, param2);
-        //fragment.setArguments(args);
         return fragment;
     }
 
@@ -41,10 +38,7 @@ public class HomePage extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         userVM = new ViewModelProvider(getActivity()).get(UserViewModel.class);
-        //if (getArguments() != null) {
-            //mParam1 = getArguments().getString(ARG_PARAM1);
-            //mParam2 = getArguments().getString(ARG_PARAM2);
-        //}
+        selected = null;
     }
 
     @Override
@@ -58,6 +52,10 @@ public class HomePage extends Fragment {
         View.OnClickListener userButton = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    Button temp = (Button) view;
+                    userVM.setCurrent(temp.getText().toString());
+                } catch (Exception e) { e.printStackTrace(); }
                 if (selected != null) {
                     selected.setBackgroundColor(ContextCompat.getColor(act, R.color.brown));
                     selected.setTextColor(ContextCompat.getColor(act, R.color.white));
@@ -69,6 +67,15 @@ public class HomePage extends Fragment {
                 }
             }
         };
+
+        View.OnClickListener testGroceryButton = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addTestGroceries();
+            }
+        };
+
+        home.findViewById(R.id.addTest).setOnClickListener(testGroceryButton);
 
         Set<String> users = userVM.usernames();
 
@@ -82,7 +89,27 @@ public class HomePage extends Fragment {
             b.setAllCaps(false);
             b.setLayoutParams(new ViewGroup.LayoutParams(260, ViewGroup.LayoutParams.MATCH_PARENT));
             ll.addView(b);
+            if (name.equals(userVM.getUsername())) b.callOnClick();
         }
         return home;
+    }
+
+    private void addTestGroceries() {
+        userVM.addGrocery(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
+        userVM.addGrocery(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
+        userVM.addGrocery(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
+        userVM.addGrocery(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
+        userVM.addGrocery(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
+        userVM.addGrocery(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
+        userVM.addGrocery(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
+        userVM.addGrocery(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
+        userVM.addGrocery(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
+        userVM.addGrocery(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
+        userVM.addGrocery(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
+        userVM.addGrocery(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
+        userVM.addGrocery(new GroceryItem("Milk", "Cartons", 0.5f, new int[]{2024, 4, 1}));
+        userVM.addGrocery(new GroceryItem("Flour", "lbs", 3.5f, new int[]{2024, 5, 1}));
+        userVM.addGrocery(new GroceryItem("Ramen", "Cups", 16, new int[]{2024, 5, 2}));
+        userVM.addGrocery(new GroceryItem("Apples", "Apples", 4, new int[]{2024, 4, 12}));
     }
 }

@@ -40,23 +40,18 @@ public class ShoppingList extends AppCompatActivity {
         shoppingListAdapter = new ShoppingListAdapter(this);
         shoppingListRecyclerView.setAdapter(shoppingListAdapter);
 
-        //shoppingList.add(new GroceryItem("Milk", "Cartons", 0.5f));
-        //shoppingList.add(new GroceryItem("Apples", "Apples", 4));
-        //shoppingList.add(new GroceryItem("Flour", "lbs", 3.5f));
-        //shoppingList.add(new GroceryItem("Ramen", "Cups", 16));
-
         shoppingListAdapter.setGroceryItem(shoppingList);
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(shoppingListAdapter));
         itemTouchHelper.attachToRecyclerView(shoppingListRecyclerView);
 
         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(new View.OnClickListener() {
+        /*fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createNewItemDialog();
             }
-        });
+        });*/
 
         Button kitchen = findViewById(R.id.pantryButton);
         Button main = findViewById(R.id.homeButton);
@@ -107,7 +102,7 @@ public class ShoppingList extends AppCompatActivity {
         //shopping.setOnClickListener(shoppingPage);
     }
 
-    public void createNewItemDialog() {
+    /*public void createNewItemDialog() {
         dialogBuilder = new AlertDialog.Builder(this);
         final View shoppingItemPopupView = getLayoutInflater().inflate(R.layout.shoppingitempopup, null);
         newItemPopup = (EditText) shoppingItemPopupView.findViewById(R.id.newItemPopup);
@@ -139,5 +134,5 @@ public class ShoppingList extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-    }
+    }*/
 }

@@ -23,6 +23,8 @@ public class NavigationFrame extends AppCompatActivity {
         setContentView(R.layout.activity_navigation_frame);
         addTestUsers();
         setFragments();
+        try { userVM.setCurrent("Chris"); }
+        catch (Exception e) { e.printStackTrace(); }
     }
 
     private void setFragments() {
